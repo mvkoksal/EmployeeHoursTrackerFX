@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.layout.HBox?>
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.demo.HelloController"
+      style="-fx-background-color: lightblue;">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label fx:id="welcomeText"/>
+
+    <StackPane alignment="CENTER">
+        <Rectangle width="300" height="400" fill="lightcoral" arcWidth="10" arcHeight="10"/>
+        <VBox alignment="CENTER" spacing="20">
+            <TextField fx:id="usernameField"  maxWidth="200" promptText="Enter username"/>
+            <PasswordField fx:id="passwordField" maxWidth="200" promptText="Enter password"/>
+            <Button text="Login" onAction="#onLoginButtonClick"/>
+            <HBox spacing="10" alignment="CENTER">
+                <Label fx:id="forgotPasswordText" text="Forgot Password"  underline="true" style="-fx-font-size: 15px; -fx-font-weight: bold;"/>
+                <Label fx:id="createAccountText" text="Create Account"  underline="true" style="-fx-font-size: 15px; -fx-font-weight: bold;"/>
+            </HBox>
+        </VBox>
+    </StackPane>
+</VBox>
+
