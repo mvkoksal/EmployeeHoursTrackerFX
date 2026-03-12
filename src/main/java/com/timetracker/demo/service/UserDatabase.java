@@ -1,7 +1,7 @@
-package com.example.demo;
+package com.timetracker.demo.service;
 
-import java.security.MessageDigest;
-import java.util.Base64;
+import com.timetracker.demo.model.User;
+
 import java.util.HashMap;
 
 public class UserDatabase {
@@ -21,6 +21,7 @@ public class UserDatabase {
         User user = new User(username, password, type);
         users.put(username, user);
     }
+
 
     public User getUser(String username) {
         return users.get(username);

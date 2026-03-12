@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.timetracker.demo.model;
 
 import java.security.MessageDigest;
 import java.util.Base64;
