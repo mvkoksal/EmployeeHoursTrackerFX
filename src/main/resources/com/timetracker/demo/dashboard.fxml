@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.geometry.Insets?>
-<AnchorPane xmlns="http://javafx.com/javafx"
+<BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.timetracker.demo.controllers.dashboardController"
             style="-fx-background-color: #F2F8F7;
@@ -12,29 +12,27 @@
             -fx-background-insets: 0">
 
     <!-- Sidebar -->
-    <VBox AnchorPane.topAnchor="0"
-          AnchorPane.bottomAnchor="0"
-          AnchorPane.leftAnchor="0"
-          prefWidth="384"
-          spacing="20"
-          style="-fx-background-color: #FFFFFF; -fx-snap-to-pixel: true;">
+    <left>
+        <VBox prefWidth="384"
+              spacing="20"
+              style="-fx-background-color: #FFFFFF; -fx-snap-to-pixel: true;">
 
-        <padding>
-            <Insets bottom="50.0" left="50.0" right="50.0" top="50.0"/>
-        </padding>
+            <padding>
+                <Insets bottom="50.0" left="50.0" right="50.0" top="50.0"/>
+            </padding>
 
-        <Label text="Time Tracker FX"
-               style="-fx-font-size: 30;
+            <Label text="Time Tracker FX"
+                   style="-fx-font-size: 30;
                     -fx-font-weight: bold;
                     -fx-font-family: 'Plus Jakarta Sans' ">
                 <VBox.margin>
                     <Insets bottom="30"/>
                 </VBox.margin>
-        </Label>
+            </Label>
 
-        <Label text="Dashboard"
-               maxWidth="Infinity"
-               style="-fx-font-size: 20;
+            <Label text="Dashboard"
+                   maxWidth="Infinity"
+                   style="-fx-font-size: 20;
                     -fx-font-weight: bold;
                     -fx-font-family: 'Plus Jakarta Sans';
                     -fx-text-fill: #0F2422;
@@ -42,9 +40,10 @@
                     -fx-cursor: hand;
                     -fx-padding: 20"/>
 
-        <Label text="Log Hours"
-               maxWidth="Infinity"
-               style="-fx-font-size: 20;
+            <Label text="Log Hours"
+                   maxWidth="Infinity"
+                   onMouseClicked="#switchToLogHours"
+                   style="-fx-font-size: 20;
                     -fx-font-weight: bold;
                     -fx-font-family: 'Plus Jakarta Sans';
                     -fx-text-fill: #0F2422;
@@ -52,9 +51,9 @@
                     -fx-cursor: hand;
                     -fx-padding: 20"/>
 
-        <Label text="Schedule"
-               maxWidth="Infinity"
-               style="-fx-font-size: 20;
+            <Label text="Schedule"
+                   maxWidth="Infinity"
+                   style="-fx-font-size: 20;
                     -fx-font-weight: bold;
                     -fx-font-family: 'Plus Jakarta Sans';
                     -fx-text-fill: #0F2422;
@@ -62,9 +61,9 @@
                     -fx-cursor: hand;
                     -fx-padding: 20"/>
 
-        <Label text="Payment History"
-               maxWidth="Infinity"
-               style="-fx-font-size: 20;
+            <Label text="Payment History"
+                   maxWidth="Infinity"
+                   style="-fx-font-size: 20;
                     -fx-font-weight: bold;
                     -fx-font-family: 'Plus Jakarta Sans';
                     -fx-text-fill: #0F2422;
@@ -72,9 +71,9 @@
                     -fx-cursor: hand;
                     -fx-padding: 20"/>
 
-        <Label text="Contact Employer"
-               maxWidth="Infinity"
-               style="-fx-font-size: 20;
+            <Label text="Contact Employer"
+                   maxWidth="Infinity"
+                   style="-fx-font-size: 20;
                     -fx-font-weight: bold;
                     -fx-font-family: 'Plus Jakarta Sans';
                     -fx-text-fill: #0F2422;
@@ -82,62 +81,63 @@
                     -fx-cursor: hand;
                     -fx-padding: 20"/>
 
-        <!-- spacer -->
-        <Region VBox.vgrow="ALWAYS"/>
+            <!-- spacer -->
+            <Region VBox.vgrow="ALWAYS"/>
 
-        <Label text="Your Account"
-               maxWidth="Infinity"
-               style="-fx-font-size: 20;
+            <Label text="Your Account"
+                   maxWidth="Infinity"
+                   style="-fx-font-size: 20;
                     -fx-font-weight: bold;
                     -fx-font-family: 'Plus Jakarta Sans';
                     -fx-text-fill: #0F2422;
                     -fx-border-color: #C8E0DC;
                     -fx-cursor: hand;
                     -fx-padding: 20"/>
-    </VBox>
-
-    <VBox AnchorPane.topAnchor="0"
-          AnchorPane.leftAnchor="384"
-          AnchorPane.rightAnchor="370"
-          spacing="20"
-          style="-fx-background-color: #F2F8F7; -fx-snap-to-pixel: true;">
-
-        <padding>
-            <Insets bottom="50.0" left="50.0" right="50.0" top="50.0"/>
-        </padding>
-
-        <Label fx:id="welcomingText" text="Hello, Meryem!"
-               style="-fx-font-size: 40;
-                    -fx-font-weight: bold;
-                    -fx-font-family: 'Plus Jakarta Sans' ">
-                <VBox.margin>
-                    <Insets bottom="30"/>
-                </VBox.margin>
-        </Label>
-
-        <VBox style="-fx-background-color: #FFFFFF; -fx-snap-to-pixel: true;">
-            <Label text="Lorem ipsum"
-                   style="-fx-font-size: 50"/>
-            <Label text="Lorem ipsum"
-                   style="-fx-font-size: 50"/>
-            <Label text="Lorem ipsum"
-                   style="-fx-font-size: 50"/>
         </VBox>
+    </left>
 
-        <GridPane hgap="10" vgap="10">
-            <columnConstraints>
-                <ColumnConstraints percentWidth="50"/>
-                <ColumnConstraints percentWidth="50"/>
-            </columnConstraints>
+    <center>
+        <HBox  fx:id="centerContent">
+            <VBox   HBox.hgrow="ALWAYS"
+                    spacing="20"
+                    style="-fx-background-color: #F2F8F7; -fx-snap-to-pixel: true;">
 
-            <rowConstraints>
-                <RowConstraints prefHeight="150"/>
-                <RowConstraints prefHeight="150"/>
-            </rowConstraints>
+                <padding>
+                    <Insets bottom="50.0" left="50.0" right="50.0" top="50.0"/>
+                </padding>
 
-            <Label text="LOG HOURS" GridPane.rowIndex="0" GridPane.columnIndex="0"
-                   maxWidth="Infinity" maxHeight="Infinity"
-                   style="-fx-font-size: 20; -fx-font-weight: bold;
+                <Label fx:id="welcomingText" text="Hello, Meryem!"
+                       style="-fx-font-size: 40;
+                    -fx-font-weight: bold;
+                    -fx-font-family: 'Plus Jakarta Sans' ">
+                    <VBox.margin>
+                        <Insets bottom="30"/>
+                    </VBox.margin>
+                </Label>
+
+                <VBox style="-fx-background-color: #FFFFFF; -fx-snap-to-pixel: true;">
+                    <Label text="Lorem ipsum"
+                           style="-fx-font-size: 50"/>
+                    <Label text="Lorem ipsum"
+                           style="-fx-font-size: 50"/>
+                    <Label text="Lorem ipsum"
+                           style="-fx-font-size: 50"/>
+                </VBox>
+
+                <GridPane hgap="10" vgap="10">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="50"/>
+                        <ColumnConstraints percentWidth="50"/>
+                    </columnConstraints>
+
+                    <rowConstraints>
+                        <RowConstraints prefHeight="150"/>
+                        <RowConstraints prefHeight="150"/>
+                    </rowConstraints>
+
+                    <Label text="LOG HOURS" GridPane.rowIndex="0" GridPane.columnIndex="0"
+                           maxWidth="Infinity" maxHeight="Infinity"
+                           style="-fx-font-size: 20; -fx-font-weight: bold;
                   -fx-font-family: 'Plus Jakarta Sans';
                   -fx-text-fill: #0F2422;
                   -fx-border-color: #C8E0DC;
@@ -146,9 +146,9 @@
                   -fx-alignment: center;
                   -fx-cursor: hand;"/>
 
-            <Label text="SCHEDULE" GridPane.rowIndex="0" GridPane.columnIndex="1"
-                   maxWidth="Infinity" maxHeight="Infinity"
-                   style="-fx-font-size: 20; -fx-font-weight: bold;
+                    <Label text="SCHEDULE" GridPane.rowIndex="0" GridPane.columnIndex="1"
+                           maxWidth="Infinity" maxHeight="Infinity"
+                           style="-fx-font-size: 20; -fx-font-weight: bold;
                   -fx-font-family: 'Plus Jakarta Sans';
                   -fx-text-fill: #0F2422;
                   -fx-border-color: #C8E0DC;
@@ -157,9 +157,9 @@
                   -fx-alignment: center;
                   -fx-cursor: hand;"/>
 
-            <Label text="PAYMENT HISTORY" GridPane.rowIndex="1" GridPane.columnIndex="0"
-                   maxWidth="Infinity" maxHeight="Infinity"
-                   style="-fx-font-size: 20; -fx-font-weight: bold;
+                    <Label text="PAYMENT HISTORY" GridPane.rowIndex="1" GridPane.columnIndex="0"
+                           maxWidth="Infinity" maxHeight="Infinity"
+                           style="-fx-font-size: 20; -fx-font-weight: bold;
                   -fx-font-family: 'Plus Jakarta Sans';
                   -fx-text-fill: #0F2422;
                   -fx-border-color: #C8E0DC;
@@ -168,9 +168,9 @@
                   -fx-alignment: center;
                   -fx-cursor: hand;"/>
 
-            <Label text="CONTACT EMPLOYER" GridPane.rowIndex="1" GridPane.columnIndex="1"
-                   maxWidth="Infinity" maxHeight="Infinity"
-                   style="-fx-font-size: 20; -fx-font-weight: bold;
+                    <Label text="CONTACT EMPLOYER" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                           maxWidth="Infinity" maxHeight="Infinity"
+                           style="-fx-font-size: 20; -fx-font-weight: bold;
                   -fx-font-family: 'Plus Jakarta Sans';
                   -fx-text-fill: #0F2422;
                   -fx-border-color: #C8E0DC;
@@ -178,34 +178,34 @@
                   -fx-border-radius: 8; -fx-background-radius: 8;
                   -fx-alignment: center;
                   -fx-cursor: hand;"/>
-        </GridPane>
-    </VBox>
+                </GridPane>
+            </VBox>
 
-    <VBox AnchorPane.topAnchor="50"
-          AnchorPane.rightAnchor="50"
-          prefWidth="300"
-          spacing="20"
-          style="-fx-background-color: #FFFFFF; -fx-snap-to-pixel: true;">
+            <VBox prefWidth="300"
+                  spacing="20"
+                  style="-fx-background-color: #FFFFFF; -fx-snap-to-pixel: true;">
 
-        <padding>
-            <Insets bottom="50.0" left="50.0" right="50.0" top="50.0"/>
-        </padding>
+                <padding>
+                    <Insets bottom="50.0" left="50.0" right="50.0" top="50.0"/>
+                </padding>
 
-        <Label text="Lorem ipsum"
-               style="-fx-font-size: 20"/>
-        <Label text="Lorem ipsum"
-               style="-fx-font-size: 20"/>
-        <Label text="Lorem ipsum"
-               style="-fx-font-size: 20"/>
-        <Label text="Lorem ipsum"
-               style="-fx-font-size: 20"/>
-        <Label text="Lorem ipsum"
-               style="-fx-font-size: 20"/>
-        <Label text="Lorem ipsum"
-               style="-fx-font-size: 20"/>
-        <Label text="Lorem ipsum"
-               style="-fx-font-size: 20"/>
+                <Label text="Lorem ipsum"
+                       style="-fx-font-size: 20"/>
+                <Label text="Lorem ipsum"
+                       style="-fx-font-size: 20"/>
+                <Label text="Lorem ipsum"
+                       style="-fx-font-size: 20"/>
+                <Label text="Lorem ipsum"
+                       style="-fx-font-size: 20"/>
+                <Label text="Lorem ipsum"
+                       style="-fx-font-size: 20"/>
+                <Label text="Lorem ipsum"
+                       style="-fx-font-size: 20"/>
+                <Label text="Lorem ipsum"
+                       style="-fx-font-size: 20"/>
 
-    </VBox>
-</AnchorPane>
+            </VBox>
+        </HBox>
+    </center>
 
+</BorderPane>

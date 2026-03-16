@@ -18,7 +18,7 @@ public class TimeTrackerApplication extends Application {
         Font.loadFont(getClass().getResourceAsStream("/fonts/PlusJakartaSans-Regular.ttf"), 0);
         Font.loadFont(getClass().getResourceAsStream("/fonts/PlusJakartaSans-Bold.ttf"), 0);
 
-        FXMLLoader fxmlLoader = new FXMLLoader(TimeTrackerApplication.class.getResource("loginPage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(TimeTrackerApplication.class.getResource("dashboard.fxml"));
         Parent root = fxmlLoader.load();
 
         Scene scene = new Scene(root);

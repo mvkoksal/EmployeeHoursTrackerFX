@@ -41,6 +41,10 @@ public class LoginPageController {
             if (database.checkLogin(username, password)) {
                 System.out.println("Correct login and password!");
                 System.out.println("You are type " + database.getUser(username).type);
+
+                Session.username = username;
+                Session.userType = database.getUser(username).type;
+
                 switchToDashboard(event);
             } else {
                 System.out.println("Wrong login or password.");
